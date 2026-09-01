@@ -1,0 +1,41 @@
+{
+  "$schema": "https://webbstack.dev/schemas/webb-manifest.v1.json",
+  "format": "webb",
+  "formatVersion": "1.0",
+  "appId": "dev.webbstack.capability-lab",
+  "name": "Capability Lab",
+  "shortName": "Capability Lab",
+  "version": "1.0.0",
+  "entrypoint": "index.html",
+  "wasm": {
+    "module": "runtime/app.wasm",
+    "glue": "runtime/app.js",
+    "abiVersion": "1.0"
+  },
+  "navigation": {
+    "initialView": "overview",
+    "fallbackView": "overview",
+    "destinations": {
+      "overview": { "type": "view" },
+      "storage": { "type": "view" },
+      "permissions": { "type": "view" },
+      "diagnostics": { "type": "view" }
+    }
+  },
+  "permissions": {
+    "device.motion": { "required": false, "reason": "Demonstrate motion fallback behavior" },
+    "device.location": { "required": false, "reason": "Demonstrate location fallback behavior" },
+    "device.vibration": { "required": false, "reason": "Demonstrate vibration fallback behavior" },
+    "device.battery": { "required": false, "reason": "Demonstrate battery fallback behavior" },
+    "device.connectivity": { "required": false, "reason": "Demonstrate connectivity fallback behavior" },
+    "media.camera": { "required": false, "reason": "Demonstrate camera fallback behavior" },
+    "media.microphone": { "required": false, "reason": "Demonstrate microphone fallback behavior" },
+    "notifications": { "required": false, "reason": "Demonstrate in-app notification behavior" },
+    "network.control": { "required": false, "reason": "Demonstrate preview network controls" },
+    "debug.network": { "required": false, "reason": "Demonstrate redacted network diagnostics" },
+    "debug.inspector": { "required": false, "reason": "Demonstrate app inspection behavior" }
+  },
+  "storage": {
+    "classes": ["session", "app", "cache", "secure"]
+  }
+}
