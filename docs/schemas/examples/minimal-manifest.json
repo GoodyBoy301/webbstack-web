@@ -1,0 +1,22 @@
+{
+  "$schema": "https://webbstack.dev/schemas/webb-manifest.v1.json",
+  "format": "webb",
+  "formatVersion": "1.0",
+  "appId": "com.example.weather",
+  "name": "Weather",
+  "version": "1.0.0",
+  "entrypoint": "runtime/index.html",
+  "wasm": {
+    "module": "runtime/app.wasm",
+    "glue": "runtime/app.js",
+    "abiVersion": "1.0"
+  },
+  "navigation": {
+    "initialView": "home",
+    "destinations": {
+      "home": {
+        "type": "view"
+      }
+    }
+  }
+}
