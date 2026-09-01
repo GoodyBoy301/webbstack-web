@@ -214,7 +214,7 @@ function App() {
   };
 
   return (
-    <div className="app-shell">
+    <div className="app-shell" data-runtime-mode={mode}>
       <header className="topbar">
         <div className="brand">
           <span className="mark" aria-hidden="true" />
@@ -238,19 +238,22 @@ function App() {
               Reset preview
             </button>
           )}
-          <span className="avatar" aria-label="Creator account">
-            GS
-          </span>
+          {mode === "preview" && (
+            <span className="avatar" aria-label="Creator account">
+              GS
+            </span>
+          )}
         </div>
       </header>
       <main className="content">
         <section className="preview-column" aria-labelledby="page-title">
           <div className="breadcrumb">
-            Projects / <strong>Capability Lab</strong> / Runtime preview
+            Projects / <strong>Capability Lab</strong> /{" "}
+            {modeDetails[mode].label}
           </div>
           <div className="preview-heading">
             <div>
-              <div className="eyebrow">Creator preview</div>
+              <div className="eyebrow">{modeDetails[mode].label}</div>
               <h1 id="page-title">Capability Lab</h1>
               <p className="subtle">
                 Validate your .webb app before you publish it.
@@ -262,7 +265,7 @@ function App() {
             {chrome && (
               <div className="device-bar">
                 <span>9:41</span>
-                <span>webbstack preview&nbsp; · &nbsp;● ● ●</span>
+                <span>webbstack {mode}&nbsp; · &nbsp;● ● ●</span>
               </div>
             )}
             <div className="device-screen">
