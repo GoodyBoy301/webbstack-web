@@ -88,7 +88,7 @@ Apps MAY alter diagnostics or authoring affordances by mode, but user-facing beh
 The bridge MUST expose immutable runtime identity for the current session:
 
 ```ts
-type WebbRuntimeInfo = {
+type WebbRuntimeInfo = Readonly<{
   formatVersion: string;
   runtimeVersion: string;
   mode: "preview" | "public" | "embed" | "development";
@@ -96,11 +96,24 @@ type WebbRuntimeInfo = {
   appVersion: string;
   buildId: string;
   sessionId: string;
-  capabilities: WebbCapabilityStatus[];
-};
+  capabilities: readonly WebbCapabilityStatus[];
+}>;
 ```
 
-`sessionId` MUST change when the runtime starts a new app session. `buildId` MUST identify the exact published or previewed app version.
+The runtime identity fields MUST remain immutable for the lifetime of an app session. `sessionId` MUST change when the runtime starts a new app session. `buildId` MUST identify the exact published or previewed app version. Runtime and capability results MUST be immutable snapshots; a later permission or availability change MUST be delivered through a new discovery result or a capability event rather than by mutating a previously returned object.
+
+The reference identity and discovery implementation is [`docs/reference/runtime-identity.ts`](reference/runtime-identity.ts). It defines the minimum instance API:
+
+```ts
+type RuntimeApi = Readonly<{
+  info(): WebbRuntimeInfo;
+  capabilities(): readonly WebbCapabilityStatus[];
+  capability(name: string): WebbCapabilityStatus | undefined;
+  canUse(name: string): boolean;
+}>;
+```
+
+`capability(name)` MUST return the current status for the exact capability name or `undefined` when the capability is unknown. `canUse(name)` MUST be false unless the capability is supported, enabled, available, and either has `requiresPermission: false` or has `permission: "granted"`. Capability names MUST be unique within a runtime identity snapshot.
 
 ### 3.3 Author-facing bridge API
 
@@ -541,16 +554,18 @@ Capabilities are webbstack-owned services exposed through a versioned bridge. Ea
 ### 10.1 Capability status
 
 ```ts
-type WebbCapabilityStatus = {
+type WebbCapabilityStatus = Readonly<{
   name: string;
   supported: boolean;
   enabled: boolean;
+  availability: "available" | "unavailable" | "restricted";
+  requiresPermission: boolean;
   permission: "not-requested" | "prompt" | "granted" | "denied" | "restricted";
   version: string;
-};
+}>;
 ```
 
-Apps MUST check capability status before use. Unsupported and denied capabilities MUST be distinguishable.
+Apps MUST check capability status before use. Unsupported, unavailable, restricted, and denied capabilities MUST be distinguishable. `requiresPermission` MUST be true for privileged capabilities and false for core capabilities. `supported: false` represents a runtime that cannot provide the capability; `availability: "unavailable"` represents a supported capability that cannot be used in the current environment; `availability: "restricted"` represents a policy or mode restriction. `permission: "denied"` represents a permission decision and MUST NOT be conflated with those availability states.
 
 ### 10.2 Mandatory and opt-in capabilities
 
