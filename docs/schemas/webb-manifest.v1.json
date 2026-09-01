@@ -1,0 +1,162 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://webbstack.dev/schemas/webb-manifest.v1.json",
+  "title": ".webb v1 manifest",
+  "description": "The frozen minimal manifest contract for a .webb package.",
+  "type": "object",
+  "required": [
+    "format",
+    "formatVersion",
+    "appId",
+    "name",
+    "version",
+    "entrypoint",
+    "wasm",
+    "navigation"
+  ],
+  "properties": {
+    "$schema": {
+      "type": "string",
+      "format": "uri-reference",
+      "description": "Schema URL used by editors and validation tools."
+    },
+    "format": {
+      "const": "webb",
+      "description": "Identifies this document as a .webb manifest."
+    },
+    "formatVersion": {
+      "type": "string",
+      "pattern": "^[0-9]+\\.[0-9]+$",
+      "description": "Supported .webb manifest format version."
+    },
+    "appId": {
+      "$ref": "#/$defs/appId"
+    },
+    "name": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 128,
+      "description": "Human-readable app name."
+    },
+    "shortName": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 32,
+      "description": "Optional compact name for constrained surfaces."
+    },
+    "version": {
+      "$ref": "#/$defs/semanticVersion"
+    },
+    "description": {
+      "type": "string",
+      "maxLength": 1000
+    },
+    "entrypoint": {
+      "$ref": "#/$defs/packagePath",
+      "description": "Package-relative browser bootstrap entrypoint."
+    },
+    "wasm": {
+      "$ref": "#/$defs/wasm"
+    },
+    "display": {
+      "$ref": "#/$defs/display"
+    },
+    "navigation": {
+      "$ref": "#/$defs/navigation"
+    }
+  },
+  "$defs": {
+    "appId": {
+      "type": "string",
+      "minLength": 3,
+      "maxLength": 128,
+      "pattern": "^[a-z0-9](?:[a-z0-9._-]*[a-z0-9])?$",
+      "description": "Stable app identifier using lowercase letters, digits, dots, hyphens, and underscores."
+    },
+    "semanticVersion": {
+      "type": "string",
+      "pattern": "^(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)(?:-[0-9A-Za-z-]+(?:\\.[0-9A-Za-z-]+)*)?(?:\\+[0-9A-Za-z-]+(?:\\.[0-9A-Za-z-]+)*)?$",
+      "description": "Semantic version in major.minor.patch form, with optional prerelease and build metadata."
+    },
+    "packagePath": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "^(?!/)(?!.*(?:^|/)\\.\\.(?:/|$))[^\\u0000-\\u001F]+$",
+      "description": "A non-empty package-relative path with no leading slash, control characters, or parent-directory traversal."
+    },
+    "wasm": {
+      "type": "object",
+      "required": ["module", "glue", "abiVersion"],
+      "properties": {
+        "module": {
+          "$ref": "#/$defs/packagePath",
+          "description": "Package-relative compiled WebAssembly module."
+        },
+        "glue": {
+          "$ref": "#/$defs/packagePath",
+          "description": "Package-relative browser bootstrap glue file."
+        },
+        "abiVersion": {
+          "type": "string",
+          "pattern": "^[0-9]+\\.[0-9]+$",
+          "description": "Bridge ABI version consumed by the app."
+        }
+      },
+      "additionalProperties": true
+    },
+    "hexColor": {
+      "type": "string",
+      "pattern": "^#[0-9A-Fa-f]{6}$",
+      "description": "Six-digit hexadecimal sRGB color."
+    },
+    "navigation": {
+      "type": "object",
+      "required": ["initialView", "destinations"],
+      "properties": {
+        "initialView": {
+          "$ref": "#/$defs/destinationId"
+        },
+        "fallbackView": {
+          "$ref": "#/$defs/destinationId"
+        },
+        "destinations": {
+          "type": "object",
+          "minProperties": 1,
+          "additionalProperties": {
+            "type": "object",
+            "required": ["type"],
+            "properties": {
+              "type": {
+                "const": "view"
+              }
+            },
+            "additionalProperties": true
+          }
+        }
+      },
+      "additionalProperties": true
+    },
+    "destinationId": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 128,
+      "pattern": "^[A-Za-z0-9._-]+$"
+    },
+    "display": {
+      "type": "object",
+      "properties": {
+        "orientation": {
+          "enum": ["portrait", "landscape", "any"]
+        },
+        "themeColor": {
+          "$ref": "#/$defs/hexColor"
+        },
+        "backgroundColor": {
+          "$ref": "#/$defs/hexColor"
+        }
+      },
+      "additionalProperties": true
+    }
+  },
+  "additionalProperties": true
+}

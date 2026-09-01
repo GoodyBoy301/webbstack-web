@@ -263,6 +263,8 @@ The manifest is the machine-readable contract between the `.webb` app and webbst
 
 ### 5.1 Minimal manifest
 
+The v1 minimal manifest is the smallest bootable contract. Its required fields are `format`, `formatVersion`, `appId`, `name`, `version`, `entrypoint`, `wasm`, and `navigation`. `display` is optional; it is shown below because it is useful to runtimes but is not required for package validity. The canonical JSON Schema is [`schemas/webb-manifest.v1.json`](schemas/webb-manifest.v1.json).
+
 ```json
 {
   "$schema": "https://webbstack.dev/schemas/webb-manifest.v1.json",
@@ -276,6 +278,12 @@ The manifest is the machine-readable contract between the `.webb` app and webbst
     "module": "runtime/app.wasm",
     "glue": "runtime/app.js",
     "abiVersion": "1.0"
+  },
+  "navigation": {
+    "initialView": "home",
+    "destinations": {
+      "home": { "type": "view" }
+    }
   },
   "display": {
     "orientation": "portrait",
@@ -312,7 +320,7 @@ The manifest is the machine-readable contract between the `.webb` app and webbst
 | `diagnostics`   | object |       No | Logging and inspection preferences.                           |
 | `metadata`      | object |       No | Search, sharing, and presentation metadata.                   |
 
-Unknown fields MUST be ignored by older runtimes unless the field is inside a namespace marked as required. Authors MUST NOT rely on unknown fields for core app behavior.
+Unknown fields MUST be ignored by older runtimes unless the field is inside a namespace marked as required. Authors MUST NOT rely on unknown fields for core app behavior. The v1 schema therefore validates the frozen core fields and permits additional fields for forward-compatible extensions.
 
 ### 5.3 Identity rules
 
