@@ -1,11 +1,17 @@
-import { createLifecycleApi, type WebbLifecycleEvent } from "../lifecycle";
-import { createNavigationApi, type NavigationState } from "../navigation";
-import { createPermissionsApi } from "../permissions";
+import {
+  createLifecycleApi,
+  type WebbLifecycleEvent,
+} from "../../docs/reference/lifecycle";
+import {
+  createNavigationApi,
+  type NavigationState,
+} from "../../docs/reference/navigation";
+import { createPermissionsApi } from "../../docs/reference/permissions";
 import {
   createRuntimeApi,
   type WebbCapabilityStatus,
-} from "../runtime-identity";
-import { createStorageApi } from "../storage";
+} from "../../docs/reference/runtime-identity";
+import { createStorageApi } from "../../docs/reference/storage";
 
 const capabilityNames = [
   "runtime.identity",

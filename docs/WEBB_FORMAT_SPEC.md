@@ -1097,6 +1097,10 @@ If a browser cannot provide the baseline contract, the viewer MUST show a compat
 
 Breaking changes require a major version increment. Additive fields and optional capabilities SHOULD use minor versions. Bug fixes and clarifications SHOULD use patch versions.
 
+### 22.2 Published compatibility matrix
+
+The published browser, runtime, and capability compatibility matrix is maintained in [`COMPATIBILITY_MATRIX.md`](./COMPATIBILITY_MATRIX.md). It MUST be updated with changes to supported browser windows, runtime or bridge versions, runtime modes, capability defaults, or embed restrictions.
+
 ## 23. Conformance levels
 
 To make adoption incremental, `.webb` may define conformance levels:
