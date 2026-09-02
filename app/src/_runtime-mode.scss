@@ -1,0 +1,42 @@
+.mode-panel {
+  padding: 20px 18px;
+}
+.mode-panel h2 {
+  font-size: 18px;
+  letter-spacing: -0.03em;
+}
+.mode-panel > .subtle {
+  font-size: 12px;
+  margin-top: 8px;
+}
+.mode-checks {
+  list-style: none;
+  display: grid;
+  gap: 9px;
+  margin: 20px 0 0;
+  padding: 0;
+}
+.mode-checks li {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  color: #dce3e9;
+  font-size: 12px;
+}
+.embed-policy {
+  display: grid;
+  gap: 5px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--raised);
+  margin-top: 20px;
+  padding: 11px;
+}
+.embed-policy strong {
+  font-size: 11px;
+}
+.embed-policy small {
+  color: var(--muted);
+  font-size: 10px;
+  line-height: 1.4;
+}

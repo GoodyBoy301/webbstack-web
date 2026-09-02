@@ -1,0 +1,9 @@
+import { ProjectList } from "./ProjectList";
+import { ProjectOverview } from "./ProjectOverview";
+import type { Project } from "./types";
+
+type Props = { project?: Project; isOpen: boolean; projects: Project[]; search: string; onSearch: (value: string) => void; onBack: () => void; onOpenRuntime: (project?: Project) => void; onSave: (updates: Pick<Project, "name" | "description" | "creator" | "username" | "slug" | "accent">) => void; onPublish: () => void; onOpen: (project: Project, publish?: boolean) => void; onDuplicate: (project: Project) => void; onUpdate: (id: string, updates: Partial<Project>) => void; onRetry: (project: Project) => void; onStop: (project: Project) => void; onCancel: (project: Project) => void; onInterrupt: (project: Project) => void; onCreate: () => void };
+
+export function DashboardContent({ project, isOpen, projects, search, onSearch, onBack, onOpenRuntime, onSave, onPublish, onOpen, onDuplicate, onUpdate, onRetry, onStop, onCancel, onInterrupt, onCreate }: Props) {
+  return <main className="dashboard-main">{project && isOpen && <ProjectOverview project={project} onBack={onBack} onOpenRuntime={onOpenRuntime as (project: Project) => void} onSave={onSave} onPublish={onPublish} />}{!isOpen && <div className="dashboard-heading"><div><span className="section-index">Workspace</span><h1>Your showcases</h1><p>Prepare, preview, and publish your .webb apps.</p></div><button className="dashboard-primary" onClick={onCreate}><span aria-hidden="true">+</span> New project</button></div>}{!isOpen && <ProjectList projects={projects} search={search} onSearch={onSearch} onOpenRuntime={onOpenRuntime} onOpen={onOpen} onDuplicate={onDuplicate} onUpdate={onUpdate} onRetry={onRetry} onStop={onStop} onCancel={onCancel} onInterrupt={onInterrupt} onCreate={onCreate} />}{!isOpen && <button className="dashboard-runtime-link" onClick={() => onOpenRuntime()}>Open runtime capability preview <span aria-hidden="true">↗</span></button>}</main>;
+}

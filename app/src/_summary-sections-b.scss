@@ -1,0 +1,45 @@
+.principles-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  border-top: 1px solid #303b30;
+}
+.principles-copy {
+  max-width: 360px;
+  padding-top: 39px;
+}
+.principles-copy p {
+  margin: 0 0 25px;
+  color: var(--summary-muted);
+  font-size: 17px;
+  line-height: 1.55;
+}
+.text-link {
+  border: 0;
+  background: none;
+  padding: 0;
+}
+.text-link:hover {
+  background: none;
+  color: var(--accent);
+}
+.summary-footer {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  max-width: 1236px;
+  margin: auto;
+  border-top: 1px solid #303b30;
+  color: #6d796b;
+  font-size: 10px;
+  padding: 25px 42px 35px;
+}
+.summary-footer .summary-brand {
+  margin-right: auto;
+  font-size: 13px;
+}
+.summary-footer .summary-mark {
+  width: 16px;
+  height: 16px;
+}
+

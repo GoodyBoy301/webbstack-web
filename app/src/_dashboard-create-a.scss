@@ -1,0 +1,96 @@
+.create-overlay {
+  position: fixed;
+  z-index: 10;
+  overscroll-behavior: contain;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  background: #172016b8;
+  padding: 20px;
+}
+.create-panel {
+  position: relative;
+  width: min(100%, 520px);
+  border-radius: 20px;
+  background: #f7f8f4;
+  box-shadow: 0 25px 70px #10150e40;
+  padding: 38px;
+}
+.create-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  border: 0;
+  background: none;
+  color: #7b8578;
+  font-size: 24px;
+  line-height: 1;
+  padding: 2px 7px;
+}
+.create-close:hover {
+  border: 0;
+  background: none;
+  color: #172016;
+}
+.create-panel h2 {
+  margin: 13px 0 9px;
+  font-size: 32px;
+  letter-spacing: -0.06em;
+}
+.create-panel > p {
+  color: #7b8578;
+  font-size: 13px;
+  line-height: 1.55;
+}
+.upload-dropzone {
+  display: grid;
+  justify-items: center;
+  gap: 7px;
+  margin-top: 27px;
+  border: 1px dashed #b6c0b1;
+  border-radius: 13px;
+  background: #eef2e9;
+  color: #53604f;
+  cursor: pointer;
+  padding: 28px 18px;
+  text-align: center;
+}
+.upload-dropzone:hover {
+  border-color: #7c926c;
+  background: #e8efdf;
+}
+.upload-dropzone strong {
+  color: #263222;
+  font-size: 13px;
+}
+.upload-dropzone span:not(.upload-icon) {
+  color: #8a9585;
+  font-size: 11px;
+}
+.upload-icon {
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  margin-bottom: 4px;
+  border-radius: 50%;
+  background: #d9f48f;
+  color: #263222;
+  font-size: 18px;
+}
+.upload-dropzone input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+}
+.upload-message {
+  min-height: 16px;
+  margin: 10px 0 0;
+  color: #a04d43;
+  font-size: 11px;
+  text-align: center;
+}
+.upload-message.success {
+  color: #527342;
+}

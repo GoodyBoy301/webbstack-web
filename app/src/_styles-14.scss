@@ -1,0 +1,99 @@
+.status-draft {
+  color: #66735f;
+}
+
+.status-uploading,
+.status-queued,
+.status-preparing,
+.status-running,
+.status-validating,
+.status-stopped,
+.status-interrupted,
+.status-cancelled {
+  color: #99713b;
+}
+.status-failed {
+  color: #a34f45;
+}
+.status-failed > span {
+  background: #f2d4ce;
+}
+
+.status-draft > span {
+  background: #dfe5dc;
+}
+.project-status-detail {
+  margin-top: 18px;
+}
+.project-progress {
+  display: grid;
+  gap: 7px;
+  margin-top: 14px;
+}
+.project-progress-label {
+  display: flex;
+  justify-content: space-between;
+  color: #7b8578;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+.project-progress progress {
+  display: block;
+  width: 100%;
+  height: 6px;
+  border: 0;
+  border-radius: 99px;
+  background: #e3e9df;
+  overflow: hidden;
+}
+.project-progress progress::-webkit-progress-bar {
+  border-radius: 99px;
+  background: #e3e9df;
+}
+.project-progress progress::-webkit-progress-value {
+  border-radius: 99px;
+  background: #9acb57;
+  transition: width 220ms ease;
+}
+.project-progress progress::-moz-progress-bar {
+  border-radius: 99px;
+  background: #9acb57;
+}
+.runtime-state-message {
+  display: grid;
+  gap: 5px;
+  margin: 18px 0 8px;
+  border: 1px solid #e3c5bd;
+  border-radius: 9px;
+  background: #fff6f2;
+  color: #8e483f;
+  padding: 11px;
+}
+.runtime-state-message span {
+  color: #a66c63;
+  font-size: 11px;
+}
+.runtime-state-message button {
+  justify-self: start;
+  margin-top: 4px;
+}
+.runtime-state-loading {
+  border-color: #c9d9a8;
+  background: #f7fbea;
+  color: #4f6735;
+}
+.runtime-state-loading span {
+  color: #6f825a;
+}
+.runtime-state-error {
+  border-color: #d59a91;
+  background: #fff0ed;
+}
+.lifecycle-loading {
+  opacity: 0.8;
+}
+.lifecycle-error {
+  border-color: #d59a91;
+}

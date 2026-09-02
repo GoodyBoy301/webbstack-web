@@ -1,0 +1,91 @@
+  .dashboard-nav {
+    padding: 0 20px;
+  }
+  .dashboard-main {
+    padding: 48px 20px 70px;
+  }
+  .dashboard-heading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  .overview-heading {
+    align-items: flex-start;
+    flex-direction: column;
+    margin-top: 38px;
+  }
+  .overview-grid {
+    grid-template-columns: 1fr;
+    margin-top: 35px;
+  }
+  .project-list {
+    margin-top: 45px;
+  }
+  .project-card {
+    padding: 14px;
+  }
+  .project-thumbnail {
+    width: 58px;
+    height: 58px;
+  }
+  .project-card-title,
+  .project-card-footer {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  .project-card-footer {
+    gap: 12px;
+  }
+  .dashboard-empty {
+    margin-top: 45px;
+    padding: 55px 20px;
+  }
+  .dashboard-user {
+    display: none;
+  }
+  .create-panel {
+    padding: 30px 22px;
+  }
+  .topbar {
+    padding: 0 16px;
+  }
+  .content {
+    padding: 18px 16px 28px;
+  }
+  .preview-heading {
+    flex-direction: column;
+  }
+  .device-frame {
+    border-width: 5px;
+    border-radius: 18px;
+  }
+  .shell-controls,
+  .lifecycle {
+    align-items: stretch;
+    flex-direction: column;
+  }
+  .shell-controls .control-group,
+  .lifecycle .control-group {
+    width: 100%;
+  }
+  .shell-controls select {
+    flex: 1;
+    max-width: none;
+  }
+  .diagnostics-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .device-screen {
+    min-height: 400px;
+    padding: 20px;
+  }
+  .device-frame[data-orientation="landscape"] .device-screen {
+    min-height: 290px;
+  }
+  .filters {
+    flex-direction: column;
+  }
+  .filters select {
+    max-width: none;
+    width: 100%;
+  }
+}

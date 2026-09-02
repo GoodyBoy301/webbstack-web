@@ -1,0 +1,64 @@
+.shell-controls,
+.lifecycle {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+  max-width: 780px;
+  margin: 15px auto 0;
+}
+.control-group {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+.control-label {
+  color: var(--muted);
+  font-size: 12px;
+  padding: 8px 2px;
+}
+.shell-controls select {
+  max-width: 180px;
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  background: var(--panel);
+  color: inherit;
+  padding: 7px;
+}
+.shell-controls option {
+  background: var(--panel);
+}
+.lifecycle {
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  padding-top: 15px;
+}
+.lifecycle strong {
+  color: #e9edf2;
+  font-size: 16px;
+}
+.diagnostics-summary {
+  border-top: 1px solid var(--line);
+  padding: 16px 18px 18px;
+}
+.diagnostics-summary .panel-title {
+  align-items: flex-start;
+}
+.diagnostics-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+  margin: 14px 0 0;
+}
+.diagnostics-grid div {
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  padding: 9px;
+}
+.diagnostics-grid dt {
+  color: var(--muted);
+  font-size: 10px;
+  text-transform: uppercase;
+}
+.diagnostics-grid dd {

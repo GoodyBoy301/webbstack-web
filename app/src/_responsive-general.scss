@@ -1,0 +1,32 @@
+@media (max-width: 900px) {
+  .content {
+    grid-template-columns: 1fr;
+  }
+  .panel {
+    max-width: none;
+  }
+  .capability-list {
+    max-height: none;
+  }
+  .summary-hero {
+    grid-template-columns: 1fr;
+  }
+  .hero-copy {
+    max-width: 700px;
+  }
+  .hero-visual {
+    min-height: 520px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

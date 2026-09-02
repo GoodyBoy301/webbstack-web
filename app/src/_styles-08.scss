@@ -1,0 +1,98 @@
+.device-bar {
+  display: flex;
+  justify-content: space-between;
+  color: #b9c2cc;
+  background: #11161b;
+  font-size: 11px;
+  padding: 9px 16px;
+}
+.device-screen {
+  display: grid;
+  place-items: center;
+  min-height: 485px;
+  padding: 35px;
+  background: linear-gradient(145deg, #f4f7f0, #dfe9d6);
+  color: #182014;
+}
+.device-frame[data-orientation="landscape"] .device-screen {
+  min-height: 390px;
+}
+.app-card {
+  max-width: 380px;
+  width: 100%;
+  border: 1px solid #bac8af;
+  border-radius: 18px;
+  background: #ffffffcc;
+  box-shadow: 0 18px 40px #33412c22;
+  padding: 28px;
+}
+.app-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 13px;
+  background: var(--runtime-accent, #19210e);
+  margin-bottom: 35px;
+}
+.app-card h2 {
+  font-size: 27px;
+  letter-spacing: -0.05em;
+  margin-bottom: 9px;
+}
+.app-card p {
+  color: #5d6b58;
+  margin-bottom: 23px;
+}
+.mock-button {
+  display: block;
+  width: 100%;
+  border-radius: 9px;
+  background: #c5f36a;
+  color: #19210e;
+  font-weight: 700;
+  padding: 11px;
+  text-align: center;
+}
+.shell-controls,
+.lifecycle {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+  max-width: 780px;
+  margin: 15px auto 0;
+}
+.control-group {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+.control-label {
+  color: var(--muted);
+  font-size: 12px;
+  padding: 8px 2px;
+}
+.shell-controls select {
+  max-width: 180px;
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  background: var(--panel);
+  color: inherit;
+  padding: 7px;
+}
+.shell-controls option {
+  background: var(--panel);
+}
+.lifecycle {
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  padding-top: 15px;
+}
+.lifecycle strong {
+  color: #e9edf2;
+  font-size: 16px;
+}
+.diagnostics-summary {
+  border-top: 1px solid var(--line);
+  padding: 16px 18px 18px;
+}

@@ -1,0 +1,70 @@
+.project-overview {
+  padding-top: 4px;
+}
+.back-link {
+  border: 0;
+  background: none;
+  color: #7b8578;
+  font-size: 12px;
+  padding: 0;
+}
+.back-link:hover {
+  border: 0;
+  background: none;
+  color: #263222;
+}
+.overview-heading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 30px;
+  margin-top: 49px;
+}
+.overview-heading h1 {
+  margin: 12px 0 7px;
+  font-size: clamp(36px, 5vw, 58px);
+  letter-spacing: -0.07em;
+  line-height: 0.95;
+}
+.overview-heading p {
+  color: #879185;
+  font-size: 12px;
+}
+.overview-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(280px, 0.85fr);
+  gap: 25px;
+  margin-top: 52px;
+}
+.customization-form,
+.showcase-preview {
+  border: 1px solid #d9ded4;
+  border-radius: 14px;
+  background: #f7f8f4;
+  padding: 25px;
+}
+.form-heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 14px;
+  border-bottom: 1px solid #e0e4dd;
+  padding-bottom: 20px;
+}
+.form-heading h2 {
+  margin-top: 10px;
+  font-size: 21px;
+  letter-spacing: -0.045em;
+}
+.overview-status {
+  color: #99713b;
+  font-size: 11px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+.overview-dirty {
+  color: #a04d43;
+  font-size: 11px;
+  font-weight: 700;
+  white-space: nowrap;
+}

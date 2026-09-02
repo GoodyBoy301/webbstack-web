@@ -1,0 +1,56 @@
+.hero-app-button {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 14px;
+  border: 0;
+  border-radius: 9px;
+  background: #1b2815;
+  color: var(--accent);
+  font-size: 10px;
+  font-weight: 700;
+  padding: 12px;
+}
+.hero-app-button:hover {
+  background: #25351e;
+}
+.hero-tabbar {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  color: #98a493;
+  background: #dce5d1;
+  padding: 16px 25px;
+}
+.hero-tabbar .active {
+  color: #1d3318;
+}
+.runtime-badge {
+  position: absolute;
+  z-index: 2;
+  right: -5px;
+  bottom: 75px;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  border: 1px solid #394638;
+  border-radius: 99px;
+  background: #202920;
+  box-shadow: 0 10px 24px #0004;
+  color: #d5e3cd;
+  font-size: 10px;
+  padding: 9px 13px;
+}
+.visual-caption {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  left: 20px;
+  display: flex;
+  justify-content: space-between;
+  color: #5f6b5d;
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}

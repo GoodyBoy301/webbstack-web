@@ -1,0 +1,65 @@
+.capability-list {
+  max-height: 610px;
+  overflow: auto;
+  padding: 0 18px;
+}
+.capability-group + .capability-group {
+  margin-top: 16px;
+}
+.group-heading {
+  display: flex;
+  justify-content: space-between;
+  color: var(--muted);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+  padding-top: 15px;
+}
+.capability-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  border-top: 1px solid #293038;
+  padding: 12px 0;
+}
+.capability-copy {
+  min-width: 0;
+}
+.capability-copy code {
+  display: block;
+  overflow-wrap: anywhere;
+  font-size: 12px;
+}
+.capability-copy small {
+  display: block;
+  color: var(--muted);
+  font-size: 11px;
+  margin-top: 3px;
+}
+.status {
+  display: inline-block;
+  border-radius: 99px;
+  font-size: 10px;
+  margin-top: 5px;
+  padding: 2px 6px;
+}
+.status-available {
+  background: #263e2d;
+  color: #a9e9b8;
+}
+.status-restricted {
+  background: #49391d;
+  color: #f3c767;
+}
+.status-unavailable {
+  background: #343940;
+  color: #aab3bd;
+}
+.empty {
+  color: var(--muted);
+  padding: 22px 0;
+  text-align: center;
+}
+.logs {

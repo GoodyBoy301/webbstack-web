@@ -1,0 +1,44 @@
+.hero-app-label {
+  margin: 43px 0 10px;
+  color: #74806e;
+  font-size: 8px;
+  font-weight: 750;
+  letter-spacing: 0.14em;
+}
+.hero-app-content h2 {
+  margin: 0;
+  font-size: 30px;
+  letter-spacing: -0.07em;
+  line-height: 0.96;
+}
+.hero-app-card {
+  display: grid;
+  gap: 5px;
+  margin-top: 27px;
+  padding: 15px;
+  border: 1px solid #c0cbb7;
+  border-radius: 13px;
+  background: #f5f7f0aa;
+}
+.hero-app-card span,
+.hero-app-card small {
+  color: #74806e;
+  font-size: 9px;
+}
+.hero-app-card strong {
+  font-size: 13px;
+}
+.hero-app-card i {
+  display: block;
+  height: 4px;
+  margin-top: 8px;
+  border-radius: 9px;
+  background: #cbd5bf;
+}
+.hero-app-card b {
+  display: block;
+  width: 68%;
+  height: 100%;
+  border-radius: inherit;
+  background: #8ebd4f;
+}

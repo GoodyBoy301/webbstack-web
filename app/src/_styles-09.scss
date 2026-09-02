@@ -1,0 +1,94 @@
+.diagnostics-summary .panel-title {
+  align-items: flex-start;
+}
+.diagnostics-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+  margin: 14px 0 0;
+}
+.diagnostics-grid div {
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  padding: 9px;
+}
+.diagnostics-grid dt {
+  color: var(--muted);
+  font-size: 10px;
+  text-transform: uppercase;
+}
+.diagnostics-grid dd {
+  margin: 4px 0 0;
+  font-size: 12px;
+  font-weight: 650;
+  text-transform: capitalize;
+}
+.panel {
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--panel);
+  overflow: hidden;
+}
+.panel-header {
+  border-bottom: 1px solid var(--line);
+  padding: 18px;
+}
+.panel-header > .subtle {
+  font-size: 12px;
+  margin-top: 8px;
+}
+.panel-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+.panel-title > span {
+  color: var(--muted);
+  font-size: 12px;
+}
+.filters {
+  display: flex;
+  gap: 8px;
+  border-bottom: 1px solid var(--line);
+  padding: 12px 18px;
+}
+.search {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  gap: 7px;
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  padding: 0 9px;
+}
+.search span {
+  color: var(--muted);
+  font-size: 18px;
+}
+.search input,
+select {
+  min-width: 0;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  outline: 0;
+  padding: 7px 0;
+}
+.filters select {
+  max-width: 120px;
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  padding: 7px;
+}
+.filters option {
+  background: var(--panel);
+}
+.capability-list {
+  max-height: 610px;
+  overflow: auto;
+  padding: 0 18px;
+}
+.capability-group + .capability-group {
+  margin-top: 16px;
+}

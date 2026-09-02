@@ -1,0 +1,98 @@
+.hero-device-screen {
+  position: relative;
+  min-height: 500px;
+  overflow: hidden;
+  border-radius: 28px;
+  background: #e6ebd9;
+  color: #172016;
+}
+.hero-status,
+.hero-tabbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 19px;
+  font-size: 9px;
+  font-weight: 700;
+}
+.hero-app-content {
+  padding: 46px 23px 18px;
+}
+.hero-app-topline {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.hero-app-icon {
+  display: grid;
+  place-items: center;
+  width: 31px;
+  height: 31px;
+  border-radius: 10px;
+  background: #182315;
+  color: var(--accent);
+  font-size: 14px;
+}
+.hero-app-dots {
+  color: #66735f;
+  letter-spacing: 3px;
+}
+.hero-app-label {
+  margin: 43px 0 10px;
+  color: #74806e;
+  font-size: 8px;
+  font-weight: 750;
+  letter-spacing: 0.14em;
+}
+.hero-app-content h2 {
+  margin: 0;
+  font-size: 30px;
+  letter-spacing: -0.07em;
+  line-height: 0.96;
+}
+.hero-app-card {
+  display: grid;
+  gap: 5px;
+  margin-top: 27px;
+  padding: 15px;
+  border: 1px solid #c0cbb7;
+  border-radius: 13px;
+  background: #f5f7f0aa;
+}
+.hero-app-card span,
+.hero-app-card small {
+  color: #74806e;
+  font-size: 9px;
+}
+.hero-app-card strong {
+  font-size: 13px;
+}
+.hero-app-card i {
+  display: block;
+  height: 4px;
+  margin-top: 8px;
+  border-radius: 9px;
+  background: #cbd5bf;
+}
+.hero-app-card b {
+  display: block;
+  width: 68%;
+  height: 100%;
+  border-radius: inherit;
+  background: #8ebd4f;
+}
+.hero-app-button {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 14px;
+  border: 0;
+  border-radius: 9px;
+  background: #1b2815;
+  color: var(--accent);
+  font-size: 10px;
+  font-weight: 700;
+  padding: 12px;
+}
+.hero-app-button:hover {
+  background: #25351e;
+}

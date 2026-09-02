@@ -1,0 +1,97 @@
+.public-viewer-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 76px;
+  border-bottom: 1px solid #d9ded4;
+  padding: 0 max(20px, calc((100vw - 1120px) / 2));
+}
+.public-viewer .summary-brand {
+  color: #172016;
+}
+.public-viewer-heading,
+.public-runtime-card,
+.public-viewer-details {
+  width: min(calc(100% - 40px), 920px);
+  margin-right: auto;
+  margin-left: auto;
+}
+.public-viewer-heading {
+  padding: 68px 0 35px;
+}
+.public-viewer-heading h1 {
+  margin: 12px 0 8px;
+  font-size: clamp(38px, 6vw, 68px);
+  letter-spacing: -0.075em;
+  line-height: 0.95;
+}
+.public-viewer-heading p,
+.public-viewer-details {
+  color: #7b8578;
+  font-size: 12px;
+}
+.public-runtime-card {
+  overflow: hidden;
+  border: 1px solid #d9ded4;
+  border-radius: 16px;
+  background: #263222;
+  box-shadow: 0 22px 50px #2632221c;
+}
+.public-runtime-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #42503d;
+  color: #d8f58b;
+  font-size: 11px;
+  padding: 13px 16px;
+}
+.public-runtime-toolbar span {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.public-runtime-toolbar i {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #c5f36a;
+}
+.public-runtime-viewport {
+  display: grid;
+  place-items: center;
+  min-height: 480px;
+  background: radial-gradient(circle at 50% 35%, #536d43, #172016 65%);
+  padding: 45px 20px;
+}
+.public-runtime-device {
+  display: grid;
+  justify-items: center;
+  gap: 13px;
+  width: min(100%, 310px);
+  min-height: 350px;
+  border: 8px solid #3b4836;
+  border-radius: 29px;
+  background: #e7eee0;
+  box-shadow: 0 25px 40px #0005;
+  color: #172016;
+  padding: 55px 25px 30px;
+  text-align: center;
+}
+.public-runtime-icon {
+  display: grid;
+  place-items: center;
+  width: 45px;
+  height: 45px;
+  border-radius: 13px;
+  background: var(--viewer-accent, #263222);
+  color: #172016;
+  font-size: 20px;
+}
+.public-runtime-device h2 {
+  max-width: 240px;
+  margin: 10px 0 18px;
+  font-size: 24px;
+  letter-spacing: -0.05em;
+  line-height: 1.05;
+}

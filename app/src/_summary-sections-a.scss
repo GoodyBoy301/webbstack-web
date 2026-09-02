@@ -1,0 +1,64 @@
+.workflow-section,
+.principles-section {
+  max-width: 1236px;
+  margin: auto;
+  padding: 96px 42px;
+}
+.workflow-section {
+  border-top: 1px solid #303b30;
+}
+.section-intro {
+  display: flex;
+  gap: 45px;
+  align-items: flex-start;
+  margin-bottom: 54px;
+}
+.section-intro h2,
+.principles-section h2 {
+  margin: 0;
+  font-size: clamp(34px, 4vw, 54px);
+  font-weight: 600;
+  letter-spacing: -0.07em;
+  line-height: 1;
+}
+.workflow-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border-top: 1px solid #303b30;
+}
+.workflow-card {
+  position: relative;
+  min-height: 210px;
+  border-right: 1px solid #303b30;
+  padding: 24px 28px 25px 0;
+}
+.workflow-card + .workflow-card {
+  padding-left: 28px;
+}
+.workflow-card:last-child {
+  border-right: 0;
+}
+.workflow-number {
+  color: #778472;
+  font:
+    11px ui-monospace,
+    monospace;
+}
+.workflow-card h3 {
+  margin: 44px 0 9px;
+  font-size: 17px;
+  letter-spacing: -0.03em;
+}
+.workflow-card p {
+  max-width: 275px;
+  color: var(--summary-muted);
+  font-size: 12px;
+  line-height: 1.55;
+}
+.workflow-arrow {
+  position: absolute;
+  right: 25px;
+  bottom: 26px;
+  color: var(--accent);
+  font-size: 18px;
+}

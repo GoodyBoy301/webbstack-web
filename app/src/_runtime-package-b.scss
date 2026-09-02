@@ -1,0 +1,47 @@
+.package-checks {
+  list-style: none;
+  margin: 8px 0 0;
+  padding: 0;
+}
+.package-checks li {
+  display: flex;
+  gap: 9px;
+  border-top: 1px solid #293038;
+  padding: 9px 0;
+}
+.package-checks strong {
+  display: block;
+  font-size: 11px;
+  font-weight: 600;
+}
+.package-checks small {
+  display: block;
+  color: var(--muted);
+  font-size: 10px;
+  line-height: 1.35;
+  margin-top: 2px;
+}
+.check-dot {
+  flex: 0 0 auto;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  margin-top: 4px;
+}
+.check-dot.check-pass {
+  background: #a9e9b8;
+}
+.check-dot.check-warning {
+  background: #f3c767;
+}
+.check-dot.check-error {
+  background: #f09a9a;
+}
+.package-note {
+  border-left: 2px solid #49391d;
+  color: var(--muted);
+  font-size: 10px;
+  line-height: 1.4;
+  margin: 10px 0 0;
+  padding-left: 8px;
+}

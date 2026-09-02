@@ -1,0 +1,62 @@
+.public-runtime-device {
+  display: grid;
+  justify-items: center;
+  gap: 13px;
+  width: min(100%, 310px);
+  min-height: 350px;
+  border: 8px solid #3b4836;
+  border-radius: 29px;
+  background: #e7eee0;
+  box-shadow: 0 25px 40px #0005;
+  color: #172016;
+  padding: 55px 25px 30px;
+  text-align: center;
+}
+.public-runtime-icon {
+  display: grid;
+  place-items: center;
+  width: 45px;
+  height: 45px;
+  border-radius: 13px;
+  background: var(--viewer-accent, #263222);
+  color: #172016;
+  font-size: 20px;
+}
+.public-runtime-device h2 {
+  max-width: 240px;
+  margin: 10px 0 18px;
+  font-size: 24px;
+  letter-spacing: -0.05em;
+  line-height: 1.05;
+}
+.public-viewer-details {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding-top: 22px;
+}
+.public-viewer-details p {
+  max-width: 600px;
+  line-height: 1.5;
+}
+.public-viewer-share {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.public-viewer-share span {
+  color: #527342;
+  font-size: 11px;
+}
+.public-viewer-empty {
+  display: grid;
+  justify-items: center;
+  align-content: center;
+  gap: 18px;
+  text-align: center;
+}
+.public-viewer-empty h1,
+.public-viewer-empty p {
+  margin: 0;
+}

@@ -1,0 +1,3 @@
+import type { Project } from "./types";
+type Props = { project: Project; onBack: () => void; onPreview: () => void };
+export function ProjectOverviewHeader({ project, onBack, onPreview }: Props) { return <><button className="back-link" onClick={onBack}>← Back to projects</button><div className="overview-heading"><div><span className="section-index">Project overview</span><h1 id="overview-title">{project.name}</h1><p>{project.filename} · Build v{project.version}</p></div><button className="dashboard-primary" disabled={project.archived || project.status !== "ready"} onClick={onPreview}>Preview runtime <span aria-hidden="true">↗</span></button></div></>; }

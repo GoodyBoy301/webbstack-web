@@ -1,0 +1,4 @@
+import type { Project } from "./dashboard/types";
+
+type Props = { project: Project; reloadKey: number; onReload: () => void };
+export function PublicRuntimeCard({ project, reloadKey, onReload }: Props) { return <section className="public-runtime-card" aria-label="Interactive app preview"><div className="public-runtime-toolbar"><span><i /> Runtime ready</span><button className="project-action" onClick={onReload}>Reload app</button></div><div className="public-runtime-viewport" key={reloadKey}><div className="public-runtime-device"><span className="public-runtime-icon">✦</span><span className="preview-label">{project.name}</span><h2>{project.description || "An interactive .webb experience."}</h2><button className="dashboard-primary">Open experience <span aria-hidden="true">→</span></button></div></div></section>; }

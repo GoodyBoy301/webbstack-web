@@ -1,0 +1,55 @@
+  border-top: 1px solid var(--line);
+  padding: 16px 18px 18px;
+}
+.text-button {
+  border: 0;
+  background: transparent;
+  color: var(--muted);
+  font-size: 12px;
+  padding: 0;
+}
+.logs ul {
+  list-style: none;
+  color: var(--muted);
+  font:
+    11px/1.6 ui-monospace,
+    monospace;
+  margin: 10px 0 0;
+  padding: 0;
+}
+.logs li {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.package-panel {
+  border-top: 1px solid var(--line);
+  padding: 16px 18px 18px;
+}
+.package-summary {
+  font-size: 12px;
+  margin-top: 8px;
+}
+.package-counts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 12px 0 3px;
+}
+.check-count {
+  border-radius: 99px;
+  font-size: 10px;
+  padding: 3px 7px;
+}
+.check-pass {
+  background: #263e2d;
+  color: #a9e9b8;
+}
+.check-warning {
+  background: #49391d;
+  color: #f3c767;
+}
+.check-error {
+  background: #492727;
+  color: #f09a9a;
+}

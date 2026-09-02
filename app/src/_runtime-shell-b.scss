@@ -1,0 +1,68 @@
+  font-size: clamp(22px, 3vw, 31px);
+  letter-spacing: -0.045em;
+}
+.app-shell h2 {
+  font-size: 14px;
+  letter-spacing: -0.01em;
+}
+.eyebrow {
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+  margin-bottom: 5px;
+}
+.subtle {
+  color: var(--muted);
+}
+.live {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  color: var(--accent);
+  font-size: 12px;
+  white-space: nowrap;
+}
+.live::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 0 4px #c5f36a1c;
+}
+.device-frame {
+  max-width: 780px;
+  min-height: 540px;
+  margin: 0 auto;
+  border: 8px solid #2b333c;
+  border-radius: 25px;
+  background: #07090b;
+  box-shadow: 0 20px 60px #0008;
+  overflow: hidden;
+  transition: min-height 0.2s ease;
+}
+.device-frame[data-orientation="landscape"] {
+  max-width: 900px;
+}
+.device-bar {
+  display: flex;
+  justify-content: space-between;
+  color: #b9c2cc;
+  background: #11161b;
+  font-size: 11px;
+  padding: 9px 16px;
+}
+.device-screen {
+  display: grid;
+  place-items: center;
+  min-height: 485px;
+  padding: 35px;
+  background: linear-gradient(145deg, #f4f7f0, #dfe9d6);
+  color: #182014;
+}
+.device-frame[data-orientation="landscape"] .device-screen {
+  min-height: 390px;
+}
+.app-card {
