@@ -1,5 +1,5 @@
 import { fireEvent, render, screen, within } from "@testing-library/react";
-import { describe, expect, it } from "vitest";
+import { beforeEach, describe, expect, it } from "vitest";
 import App from "./App";
 
 const selectMode = (mode: "preview" | "public" | "embed") => {
@@ -8,23 +8,56 @@ const selectMode = (mode: "preview" | "public" | "embed") => {
   });
 };
 
+const renderRuntime = () => render(<App initialView="runtime" />);
+
+beforeEach(() => {
+  window.location.hash = "";
+});
+
+describe("product summary", () => {
+  it("explains the product and offers a path to the runtime", () => {
+    render(<App />);
+
+    expect(
+      screen.getByRole("heading", {
+        name: /Turn your app into a credible experience/,
+      }),
+    ).toBeInTheDocument();
+    expect(
+      screen.getByRole("heading", { name: /From project build/ }),
+    ).toBeInTheDocument();
+    expect(
+      screen.getByRole("button", { name: /Create a showcase/ }),
+    ).toBeInTheDocument();
+  });
+
+  it("opens the existing runtime preview from the primary CTA", () => {
+    render(<App />);
+    fireEvent.click(screen.getByRole("button", { name: /Create a showcase/ }));
+
+    expect(
+      screen.getByRole("heading", { name: "Capability controls" }),
+    ).toBeInTheDocument();
+  });
+});
+
 describe("reference app runtime conformance", () => {
   it.each([
     ["preview", "Creator preview"],
     ["public", "Public runtime"],
     ["embed", "Embed runtime"],
   ] as const)("runs in %s mode", (mode, label) => {
-    render(<App />);
+    renderRuntime();
     selectMode(mode);
 
     expect(
-      document.querySelector(`[data-runtime-mode=\"${mode}\"]`),
+      document.querySelector(`[data-runtime-mode="${mode}"]`),
     ).toBeInTheDocument();
     expect(screen.getAllByText(label).length).toBeGreaterThan(0);
   });
 
   it("keeps creator controls host-only while switching through every mode", () => {
-    render(<App />);
+    renderRuntime();
 
     expect(
       screen.getByRole("heading", { name: "Capability controls" }),
@@ -67,8 +100,7 @@ describe("reference app runtime conformance", () => {
   });
 
   it("exposes and filters the complete v1 capability fixture", () => {
-    render(<App />);
-
+    renderRuntime();
     expect(screen.getByText("20/20")).toBeInTheDocument();
     expect(screen.getByText("runtime.identity")).toBeInTheDocument();
     expect(screen.getByText("device.motion")).toBeInTheDocument();
@@ -76,25 +108,19 @@ describe("reference app runtime conformance", () => {
 
     fireEvent.change(
       screen.getByRole("searchbox", { name: "Search capabilities" }),
-      {
-        target: { value: "device.motion" },
-      },
+      { target: { value: "device.motion" } },
     );
-
     expect(screen.getByText("1/20")).toBeInTheDocument();
     expect(screen.getByText("device.motion")).toBeInTheDocument();
     expect(screen.queryByText("runtime.identity")).not.toBeInTheDocument();
   });
 
   it("requests restricted capabilities and resets fixture state", () => {
-    render(<App />);
+    renderRuntime();
     fireEvent.change(
       screen.getByRole("searchbox", { name: "Search capabilities" }),
-      {
-        target: { value: "device.motion" },
-      },
+      { target: { value: "device.motion" } },
     );
-
     fireEvent.click(screen.getByRole("button", { name: "Request" }));
     expect(screen.getByText("Permission requested")).toBeInTheDocument();
     expect(
@@ -107,14 +133,11 @@ describe("reference app runtime conformance", () => {
   });
 
   it("keeps unavailable capability actions disabled and reports package checks", () => {
-    render(<App />);
+    renderRuntime();
     fireEvent.change(
       screen.getByRole("searchbox", { name: "Search capabilities" }),
-      {
-        target: { value: "device.battery" },
-      },
+      { target: { value: "device.battery" } },
     );
-
     expect(screen.getByRole("button", { name: "Test" })).toBeDisabled();
 
     const packagePanel = screen.getByRole("region", {
